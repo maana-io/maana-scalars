@@ -1,1 +1,1 @@
-# Maana Q Demo: Black Mirror
+# maana-q-scalars service

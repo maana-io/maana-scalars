@@ -1,24 +1,19 @@
 {
-  "name": "maana-demo-black-mirror-helpers",
+  "name": "maana-q-scalars",
   "author": "Maana, Inc.",
-  "license": "UNLICENSED",
-  "private": true,
+  "license": "MIT",
   "version": "1.0.0",
-  "description": "Maana Q demo Black Mirror helper functions",
+  "description": "Maana Q Knowledge Service",
   "main": "src/start.js",
-  "repository": "git@github.com:maana-io/q-tutorials.git",
+  "repository": "git@github.com:maana-io/maana-q-scalars.git",
   "scripts": {
-    "build": "./node_modules/.bin/babel ./src -d ./dist --copy-files",
-    "docker-build": "docker build -t maana-demo-black-mirror-helpers .",
-    "docker-run": "docker run -p 8050:8050 maana-demo-black-mirror-helpers",
+    "docker-build": "docker build -t maana-q-scalars .",
+    "docker-run": "docker run -p 8050:8050 maana-q-scalars",
     "precommit": "lint-staged",
     "prettier": "./node_modules/.bin/prettier --write \"src/**/*.{js,jsx}\"",
     "start": "babel-node ./src/start.js",
-    "predeploy": "npm-run-all build docker-build",
     "dbg": "nodemon --inspect ./src/start.dev.js --exec babel-node -e js",
-    "dev": "nodemon ./src/start.dev.js --exec babel-node -e js",
-    "disableAuth": "nodemon ./src/start.dev.js --exec babel-node -e js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon ./src/start.dev.js --exec babel-node -e js"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [
@@ -46,7 +41,7 @@
     "io.maana.shared": "3.1.4-release",
     "jwks-rsa": "^1.4.0",
     "maana-amqp-pubsub": "0.1.5",
-    "node-fetch": "^2.4.1",
+    "node-fetch": "^2.5.0",
     "schemaglue": "^4.0.4",
     "subscriptions-transport-ws": "^0.9.16",
     "uuid": "^3.3.2"
@@ -65,18 +60,17 @@
     "@babel/plugin-syntax-import-meta": "^7.2.0",
     "@babel/plugin-transform-async-to-generator": "^7.4.4",
     "@babel/plugin-transform-runtime": "^7.4.4",
-    "@babel/polyfill": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.2.0",
     "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-node": "^8.0.1",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-standard": "^4.0.0",
     "lint-staged": "^8.1.5",
-    "nodemon": "^1.18.11",
+    "nodemon": "^1.19.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.17.0"
   }
