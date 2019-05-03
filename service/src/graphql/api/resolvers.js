@@ -53,6 +53,8 @@ export const resolver = {
     intCoerceToOpt: async (_, { a }) => a,
     jsonCoerceToOpt: async (_, { a }) => a,
     stringCoerceToOpt: async (_, { a }) => a,
-    timeCoerceToOpt: async (_, { a }) => a
+    timeCoerceToOpt: async (_, { a }) => a,
+
+    unionString: async (_, { a, b }) => [...new Set([...a, ...b])]
   }
 }
