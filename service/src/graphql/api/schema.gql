@@ -10,7 +10,6 @@ type Info {
 }
 
 type Query {
-  booleanIdentity(a: Boolean!): Boolean!
   dateIdentity(a: Date!): Date!
   dateTimeIdentity(a: DateTime!): DateTime!
   floatIdentity(a: Float!): Float!
@@ -20,7 +19,6 @@ type Query {
   timeIdentity(a: Time!): Time!
   stringIdentity(a: String!): String!
 
-  booleanIdentityOpt(a: Boolean): Boolean
   dateIdentityOpt(a: Date): Date
   dateTimeIdentityOpt(a: DateTime): DateTime
   floatIdentityOpt(a: Float): Float
@@ -30,7 +28,6 @@ type Query {
   stringIdentityOpt(a: String): String
   timeIdentityOpt(a: Time): Time
 
-  booleanCoerceFromOpt(a: Boolean!): Boolean
   dateCoerceFromOpt(a: Date): Date!
   dateTimeCoerceFromOpt(a: DateTime): DateTime!
   floatCoerceFromOpt(a: Float): Float!
@@ -40,7 +37,6 @@ type Query {
   stringCoerceFromOpt(a: String): String!
   timeCoerceFromOpt(a: Time): Time!
 
-  booleanCoerceToOpt(a: Boolean!): Boolean
   dateCoerceToOpt(a: Date!): Date
   dateTimeCoerceToOpt(a: DateTime!): DateTime
   floatCoerceToOpt(a: Float!): Float

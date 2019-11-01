@@ -15,7 +15,6 @@ export const resolver = {
       }
     },
 
-    booleanIdentity: async (_, { a }) => a,
     dateIdentity: async (_, { a }) => a,
     dateTimeIdentity: async (_, { a }) => a,
     floatIdentity: async (_, { a }) => a,
@@ -25,7 +24,6 @@ export const resolver = {
     stringIdentity: async (_, { a }) => a,
     timeIdentity: async (_, { a }) => a,
 
-    booleanIdentityOpt: async (_, { a }) => a,
     dateIdentityOpt: async (_, { a }) => a,
     dateTimeIdentityOpt: async (_, { a }) => a,
     floatIdentityOpt: async (_, { a }) => a,
@@ -35,7 +33,6 @@ export const resolver = {
     stringIdentityOpt: async (_, { a }) => a,
     timeIdentityOpt: async (_, { a }) => a,
 
-    booleanCoerceFromOpt: async (_, { a }) => a || false,
     dateCoerceFromOpt: async (_, { a }) => a || date0,
     dateTimeCoerceFromOpt: async (_, { a }) => a || dateTime0,
     floatCoerceFromOpt: async (_, { a }) => a || 0.0,
@@ -45,7 +42,6 @@ export const resolver = {
     stringCoerceFromOpt: async (_, { a }) => a || '',
     timeCoerceFromOpt: async (_, { a }) => a || time0,
 
-    booleanCoerceToOpt: async (_, { a }) => a,
     dateCoerceToOpt: async (_, { a }) => a,
     dateTimeCoerceToOpt: async (_, { a }) => a,
     floatCoerceToOpt: async (_, { a }) => a,
