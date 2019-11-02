@@ -1,16 +1,23 @@
 type Query {
   # Identity
-  stringIdentity(a: String!): String!
-  stringIdentityOpt(a: String): String
+  stringIdentity(x: String!): String!
+  stringIdentityOpt(x: String): String
 
   # NONULL coercion
-  stringCoerceFromOpt(a: String): String!
-  stringCoerceToOpt(a: String!): String
+  stringCoerceFromOpt(x: String): String!
+  stringCoerceToOpt(x: String!): String
 
   # Lists
   stringListUnion(a: [String!]!, b: [String!]!): [String!]!
   stringListConcat(a: [String!]!, b: [String!]!): [String!]!
-  stringListReverse(a: [String!]!): [String!]!
+  stringListReverse(x: [String!]!): [String!]!
+  stringListUnique(x: [String!]!): [String!]!
+  stringListFilterNulls(x: [String]): [String!]!
 
   # Operations
+  stringLength(x: String!): Int!
+  stringReverse(x: String!): String!
+  stringConcat(a: String!, b: String!): String!
+  stringEqual(a: String!, b: String!): String!
+  stringReplace(source: String!, search: String!, replace: String!): String!
 }

@@ -1,21 +1,24 @@
 export const resolver = {
   Query: {
     // Identity
-    dateIdentity: async (_, { a }) => a,
-    dateIdentityOpt: async (_, { a }) => a,
+    dateIdentity: async (_, { x }) => x,
+    dateIdentityOpt: async (_, { x }) => x,
 
     // NONULL coercion
-    dateCoerceFromOpt: async (_, { a }) => a || new Date().toLocaleDateString(),
-    dateCoerceToOpt: async (_, { a }) => a,
+    dateCoerceFromOpt: async (_, { x }) => x || new Date().toLocaleDateString(),
+    dateCoerceToOpt: async (_, { x }) => x,
 
     // String de/serialization
-    dateParse: async (_, { string }) => new Date(string).toLocaleDateString(),
-    dateToString: async (_, { a }) => a.toString(),
+    dateParse: async (_, { x }) => new Date(x).toLocaleDateString(),
+    dateToString: async (_, { x }) => x.toString(),
 
     // Lists
     dateListUnion: async (_, { a, b }) => [...new Set([...a, ...b])],
     dateListConcat: async (_, { a, b }) => [...a, ...b],
-    dateListReverse: async (_, { a }) => a.reverse(),
+    dateListReverse: async (_, { x }) => x.reverse(),
+    dateListUnique: async (_, { x }) => [...new Set(x)],
+    dateListFilterNulls: async (_, { x }) =>
+      x ? x.filter(y => y !== null) : [],
 
     // Operations
     dateNow: async () => new Date().toLocaleDateString()

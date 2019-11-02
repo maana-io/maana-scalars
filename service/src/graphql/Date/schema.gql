@@ -1,20 +1,22 @@
 type Query {
   # Identity
-  dateIdentity(a: Date!): Date!
-  dateIdentityOpt(a: Date): Date
+  dateIdentity(x: Date!): Date!
+  dateIdentityOpt(x: Date): Date
 
   # NONULL coercion
-  dateCoerceFromOpt(a: Date): Date!
-  dateCoerceToOpt(a: Date!): Date
+  dateCoerceFromOpt(x: Date): Date!
+  dateCoerceToOpt(x: Date!): Date
 
   # String de/serialization
-  dateParse(string: String!): Date!
-  dateToString(a: Date!): String!
+  dateParse(x: String!): Date!
+  dateToString(x: Date!): String!
 
   # Lists
   dateListUnion(a: [Date!]!, b: [Date!]!): [Date!]!
   dateListConcat(a: [Date!]!, b: [Date!]!): [Date!]!
-  dateListReverse(a: [Date!]!): [Date!]!
+  dateListReverse(x: [Date!]!): [Date!]!
+  dateListUnique(x: [Date!]!): [Date!]!
+  dateListFilterNulls(x: [Date]): [Date!]!
 
   # Operations
   dateNow: Date!

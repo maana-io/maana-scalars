@@ -1,24 +1,26 @@
 type Query {
   # Identity
-  booleanIdentity(a: Boolean!): Boolean!
-  booleanIdentityOpt(a: Boolean): Boolean
+  booleanIdentity(x: Boolean!): Boolean!
+  booleanIdentityOpt(x: Boolean): Boolean
 
   # NONULL coercion
-  booleanCoerceFromOpt(a: Boolean): Boolean!
-  booleanCoerceToOpt(a: Boolean!): Boolean
+  booleanCoerceFromOpt(x: Boolean): Boolean!
+  booleanCoerceToOpt(x: Boolean!): Boolean
 
   # String de/serialization
-  booleanParse(string: String!): Boolean!
-  booleanToString(a: Boolean!): String!
+  booleanParse(x: String!): Boolean!
+  booleanToString(x: Boolean!): String!
 
   # Lists
   booleanListUnion(a: [Boolean!]!, b: [Boolean!]!): [Boolean!]!
   booleanListConcat(a: [Boolean!]!, b: [Boolean!]!): [Boolean!]!
-  booleanListReverse(a: [Boolean!]!): [Boolean!]!
+  booleanListReverse(x: [Boolean!]!): [Boolean!]!
+  booleanListUnique(x: [Boolean!]!): [Boolean!]!
+  booleanListFilterNulls(x: [Boolean]): [Boolean!]!
 
   # Operations
   booleanOr(a: Boolean!, b: Boolean!): Boolean!
   booleanAnd(a: Boolean!, b: Boolean!): Boolean!
   booleanXor(a: Boolean!, b: Boolean!): Boolean!
-  booleanNot(a: Boolean!): Boolean!
+  booleanNot(x: Boolean!): Boolean!
 }

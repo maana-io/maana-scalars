@@ -1,21 +1,23 @@
 export const resolver = {
   Query: {
     // Identity
-    idIdentity: async (_, { a }) => a,
-    idIdentityOpt: async (_, { a }) => a,
+    idIdentity: async (_, { x }) => x,
+    idIdentityOpt: async (_, { x }) => x,
 
     // NONULL coercion
-    idCoerceFromOpt: async (_, { a }) => a || {},
-    idCoerceToOpt: async (_, { a }) => a,
+    idCoerceFromOpt: async (_, { x }) => x || {},
+    idCoerceToOpt: async (_, { x }) => x,
 
     // String de/serialization
-    idParse: async (_, { string }) => JSON.parse(string),
-    idToString: async (_, { a }) => JSON.stringify(a),
+    idParse: async (_, { x }) => JSON.parse(x),
+    idToString: async (_, { x }) => JSON.stringify(x),
 
     // Lists
     idListUnion: async (_, { a, b }) => [...new Set([...a, ...b])],
     idListConcat: async (_, { a, b }) => [...a, ...b],
-    idListReverse: async (_, { a }) => a.reverse()
+    idListReverse: async (_, { x }) => x.reverse(),
+    idListUnique: async (_, { x }) => [...new Set(x)],
+    idListFilterNulls: async (_, { x }) => (x ? x.filter(y => y !== null) : [])
 
     // Operations
   }

@@ -1,21 +1,24 @@
 export const resolver = {
   Query: {
     // Identity
-    timeIdentity: async (_, { a }) => a,
-    timeIdentityOpt: async (_, { a }) => a,
+    timeIdentity: async (_, { x }) => x,
+    timeIdentityOpt: async (_, { x }) => x,
 
     // NONULL coercion
-    timeCoerceFromOpt: async (_, { a }) => a || new Date().toLocaleTimeString(),
-    timeCoerceToOpt: async (_, { a }) => a,
+    timeCoerceFromOpt: async (_, { x }) => x || new Date().toLocaleTimeString(),
+    timeCoerceToOpt: async (_, { x }) => x,
 
     // String de/serialization
-    timeParse: async (_, { string }) => Date.parse(string),
-    timeToString: async (_, { a }) => a.toString(),
+    timeParse: async (_, { x }) => Date.parse(x),
+    timeToString: async (_, { x }) => x.toString(),
 
     // Lists
     timeListUnion: async (_, { a, b }) => [...new Set([...a, ...b])],
     timeListConcat: async (_, { a, b }) => [...a, ...b],
-    timeListReverse: async (_, { a }) => a.reverse(),
+    timeListReverse: async (_, { x }) => x.reverse(),
+    timeListUnique: async (_, { x }) => [...new Set(x)],
+    timeListFilterNulls: async (_, { x }) =>
+      x ? x.filter(y => y !== null) : [],
 
     // Operations
     timeNow: async () => new Date().toLocaleTimeString()

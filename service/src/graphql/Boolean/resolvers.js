@@ -6,26 +6,29 @@ Boolean.parse = function(val) {
 export const resolver = {
   Query: {
     // Identity
-    booleanIdentity: async (_, { a }) => a,
-    booleanIdentityOpt: async (_, { a }) => a,
+    booleanIdentity: async (_, { x }) => x,
+    booleanIdentityOpt: async (_, { x }) => x,
 
     // NONULL coercion
-    booleanCoerceFromOpt: async (_, { a }) => a || false,
-    booleanCoerceToOpt: async (_, { a }) => a,
+    booleanCoerceFromOpt: async (_, { x }) => x || false,
+    booleanCoerceToOpt: async (_, { x }) => x,
 
     // String de/serialization
-    booleanParse: async (_, { string }) => Boolean.parse(string),
-    booleanToString: async (_, { a }) => a.toString(),
+    booleanParse: async (_, { x }) => Boolean.parse(x),
+    booleanToString: async (_, { x }) => x.toString(),
 
     // Lists
     booleanListUnion: async (_, { a, b }) => [...new Set([...a, ...b])],
     booleanListConcat: async (_, { a, b }) => [...a, ...b],
-    booleanListReverse: async (_, { a }) => a.reverse(),
+    booleanListReverse: async (_, { x }) => x.reverse(),
+    booleanListUnique: async (_, { x }) => [...new Set(x)],
+    booleanListFilterNulls: async (_, { x }) =>
+      x ? x.filter(y => y !== null) : [],
 
     // Operations
     booleanOr: async (_, { a, b }) => a || b,
     booleanAnd: async (_, { a, b }) => a && b,
     booleanXor: async (_, { a, b }) => (a ? !b : b),
-    booleanNot: async (_, { a }) => !a
+    booleanNot: async (_, { x }) => !x
   }
 }

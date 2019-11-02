@@ -1,20 +1,22 @@
 type Query {
   # Identity
-  jsonIdentity(a: JSON!): JSON!
-  jsonIdentityOpt(a: JSON): JSON
+  jsonIdentity(x: JSON!): JSON!
+  jsonIdentityOpt(x: JSON): JSON
 
   # NONULL coercion
-  jsonCoerceFromOpt(a: JSON): JSON!
-  jsonCoerceToOpt(a: JSON!): JSON
+  jsonCoerceFromOpt(x: JSON): JSON!
+  jsonCoerceToOpt(x: JSON!): JSON
 
   # String de/serialization
-  jsonParse(string: String!): JSON!
-  jsonToString(a: JSON!): String!
+  jsonParse(x: String!): JSON!
+  jsonToString(x: JSON!): String!
 
   # Lists
   jsonListUnion(a: [JSON!]!, b: [JSON!]!): [JSON!]!
   jsonListConcat(a: [JSON!]!, b: [JSON!]!): [JSON!]!
-  jsonListReverse(a: [JSON!]!): [JSON!]!
+  jsonListReverse(x: [JSON!]!): [JSON!]!
+  jsonListUnique(x: [JSON!]!): [JSON!]!
+  jsonListFilterNulls(x: [JSON]): [JSON!]!
 
   # Operations
 }

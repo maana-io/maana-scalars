@@ -1,20 +1,25 @@
 type Query {
   # Identity
-  intIdentity(a: Int!): Int!
-  intIdentityOpt(a: Int): Int
+  intIdentity(x: Int!): Int!
+  intIdentityOpt(x: Int): Int
 
   # NONULL coercion
-  intCoerceFromOpt(a: Int): Int!
-  intCoerceToOpt(a: Int!): Int
+  intCoerceFromOpt(x: Int): Int!
+  intCoerceToOpt(x: Int!): Int
 
   # String de/serialization
-  intParse(string: String!): Int!
-  intToString(a: Int!): String!
+  intParse(x: String!): Int!
+  intToString(x: Int!): String!
 
   # Lists
   intListUnion(a: [Int!]!, b: [Int!]!): [Int!]!
   intListConcat(a: [Int!]!, b: [Int!]!): [Int!]!
-  intListReverse(a: [Int!]!): [Int!]!
+  intListReverse(x: [Int!]!): [Int!]!
+  intListUnique(x: [Int!]!): [Int!]!
+  intListFilterNulls(x: [Int]): [Int!]!
 
   # Operations
+  intEqual(a: Int!, b: Int!): Boolean!
+  intGreaterThan(x: Int!, min: Int!): Boolean!
+  intLessThan(x: Int!, max: Int!): Boolean!
 }

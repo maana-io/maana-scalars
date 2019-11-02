@@ -1,20 +1,22 @@
 type Query {
   # Identity
-  timeIdentity(a: Time!): Time!
-  timeIdentityOpt(a: Time): Time
+  timeIdentity(x: Time!): Time!
+  timeIdentityOpt(x: Time): Time
 
   # NONULL coercion
-  timeCoerceFromOpt(a: Time): Time!
-  timeCoerceToOpt(a: Time!): Time
+  timeCoerceFromOpt(x: Time): Time!
+  timeCoerceToOpt(x: Time!): Time
 
   # String de/serialization
-  timeParse(string: String!): Time!
-  timeToString(a: Time!): String!
+  timeParse(x: String!): Time!
+  timeToString(x: Time!): String!
 
   # Lists
   timeListUnion(a: [Time!]!, b: [Time!]!): [Time!]!
   timeListConcat(a: [Time!]!, b: [Time!]!): [Time!]!
-  timeListReverse(a: [Time!]!): [Time!]!
+  timeListReverse(x: [Time!]!): [Time!]!
+  timeListUnique(x: [Time!]!): [Time!]!
+  timeListFilterNulls(x: [Time]): [Time!]!
 
   # Operations
   timeNow: Time!

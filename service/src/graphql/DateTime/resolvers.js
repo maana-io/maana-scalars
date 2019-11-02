@@ -1,21 +1,24 @@
 export const resolver = {
   Query: {
     // Identity
-    dateTimeIdentity: async (_, { a }) => a,
-    dateTimeIdentityOpt: async (_, { a }) => a,
+    dateTimeIdentity: async (_, { x }) => x,
+    dateTimeIdentityOpt: async (_, { x }) => x,
 
     // NONULL coercion
-    dateTimeCoerceFromOpt: async (_, { a }) => a || new Date().toISOString(),
-    dateTimeCoerceToOpt: async (_, { a }) => a,
+    dateTimeCoerceFromOpt: async (_, { x }) => x || new Date().toISOString(),
+    dateTimeCoerceToOpt: async (_, { x }) => x,
 
     // String de/serialization
-    dateTimeParse: async (_, { string }) => Date.parse(string),
-    dateTimeToString: async (_, { a }) => a.toString(),
+    dateTimeParse: async (_, { x }) => Date.parse(x),
+    dateTimeToString: async (_, { x }) => x.toString(),
 
     // Lists
-    dateListTimeUnion: async (_, { a, b }) => [...new Set([...a, ...b])],
-    dateListTimeConcat: async (_, { a, b }) => [...a, ...b],
-    dateListTimeReverse: async (_, { a }) => a.reverse(),
+    dateTimeListUnion: async (_, { a, b }) => [...new Set([...a, ...b])],
+    dateTimeListConcat: async (_, { a, b }) => [...a, ...b],
+    dateTimeListReverse: async (_, { x }) => x.reverse(),
+    dateTimeListUnique: async (_, { x }) => [...new Set(x)],
+    dateTimeListFilterNulls: async (_, { x }) =>
+      x ? x.filter(y => y !== null) : [],
 
     // Operations
     dateTimeNow: async () => new Date().toISOString()
