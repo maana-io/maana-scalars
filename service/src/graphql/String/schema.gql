@@ -1,0 +1,16 @@
+type Query {
+  # Identity
+  stringIdentity(a: String!): String!
+  stringIdentityOpt(a: String): String
+
+  # NONULL coercion
+  stringCoerceFromOpt(a: String): String!
+  stringCoerceToOpt(a: String!): String
+
+  # Lists
+  stringListUnion(a: [String!]!, b: [String!]!): [String!]!
+  stringListConcat(a: [String!]!, b: [String!]!): [String!]!
+  stringListReverse(a: [String!]!): [String!]!
+
+  # Operations
+}

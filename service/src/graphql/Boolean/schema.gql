@@ -4,16 +4,21 @@ type Query {
   booleanIdentityOpt(a: Boolean): Boolean
 
   # NONULL coercion
-  booleanCoerceFromOpt(a: Boolean!): Boolean
+  booleanCoerceFromOpt(a: Boolean): Boolean!
   booleanCoerceToOpt(a: Boolean!): Boolean
-
-  # Logical operations
-  booleanOr(a: Boolean!, b: Boolean!): Boolean!
-  booleanAnd(a: Boolean!, b: Boolean!): Boolean!
-  booleanXor(a: Boolean!, b: Boolean!): Boolean!
-  booleanNot(a: Boolean!): Boolean!
 
   # String de/serialization
   booleanParse(string: String!): Boolean!
   booleanToString(a: Boolean!): String!
+
+  # Lists
+  booleanListUnion(a: [Boolean!]!, b: [Boolean!]!): [Boolean!]!
+  booleanListConcat(a: [Boolean!]!, b: [Boolean!]!): [Boolean!]!
+  booleanListReverse(a: [Boolean!]!): [Boolean!]!
+
+  # Operations
+  booleanOr(a: Boolean!, b: Boolean!): Boolean!
+  booleanAnd(a: Boolean!, b: Boolean!): Boolean!
+  booleanXor(a: Boolean!, b: Boolean!): Boolean!
+  booleanNot(a: Boolean!): Boolean!
 }

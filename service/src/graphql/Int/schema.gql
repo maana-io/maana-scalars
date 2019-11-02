@@ -1,0 +1,20 @@
+type Query {
+  # Identity
+  intIdentity(a: Int!): Int!
+  intIdentityOpt(a: Int): Int
+
+  # NONULL coercion
+  intCoerceFromOpt(a: Int): Int!
+  intCoerceToOpt(a: Int!): Int
+
+  # String de/serialization
+  intParse(string: String!): Int!
+  intToString(a: Int!): String!
+
+  # Lists
+  intListUnion(a: [Int!]!, b: [Int!]!): [Int!]!
+  intListConcat(a: [Int!]!, b: [Int!]!): [Int!]!
+  intListReverse(a: [Int!]!): [Int!]!
+
+  # Operations
+}

@@ -1,0 +1,20 @@
+type Query {
+  # Identity
+  floatIdentity(a: Float!): Float!
+  floatIdentityOpt(a: Float): Float
+
+  # NONULL coercion
+  floatCoerceFromOpt(a: Float): Float!
+  floatCoerceToOpt(a: Float!): Float
+
+  # String de/serialization
+  floatParse(string: String!): Float!
+  floatToString(a: Float!): String!
+
+  # Lists
+  floatListUnion(a: [Float!]!, b: [Float!]!): [Float!]!
+  floatListConcat(a: [Float!]!, b: [Float!]!): [Float!]!
+  floatListReverse(a: [Float!]!): [Float!]!
+
+  # Operations
+}

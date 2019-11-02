@@ -1,0 +1,20 @@
+type Query {
+  # Identity
+  idIdentity(a: ID!): ID!
+  idIdentityOpt(a: ID): ID
+
+  # NONULL coercion
+  idCoerceFromOpt(a: ID): ID!
+  idCoerceToOpt(a: ID!): ID
+
+  # String de/serialization
+  idParse(string: String!): ID!
+  idToString(a: ID!): String!
+
+  # Lists
+  idListUnion(a: [ID!]!, b: [ID!]!): [ID!]!
+  idListConcat(a: [ID!]!, b: [ID!]!): [ID!]!
+  idListReverse(a: [ID!]!): [ID!]!
+
+  # Operations
+}

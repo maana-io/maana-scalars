@@ -1,0 +1,21 @@
+type Query {
+  # Identity
+  dateTimeIdentity(a: DateTime!): DateTime!
+  dateTimeIdentityOpt(a: DateTime): DateTime
+
+  # NONULL coercion
+  dateTimeCoerceFromOpt(a: DateTime): DateTime!
+  dateTimeCoerceToOpt(a: DateTime!): DateTime
+
+  # String de/serialization
+  dateTimeParse(string: String!): DateTime!
+  dateTimeToString(a: DateTime!): String!
+
+  # Lists
+  dateListTimeUnion(a: [DateTime!]!, b: [DateTime!]!): [DateTime!]!
+  dateListTimeConcat(a: [DateTime!]!, b: [DateTime!]!): [DateTime!]!
+  dateListTimeReverse(a: [DateTime!]!): [DateTime!]!
+
+  # Operations
+  dateTimeNow: DateTime!
+}

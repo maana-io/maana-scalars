@@ -1,0 +1,44 @@
+# Write your query or mutation here
+query BooleanTests {
+  booleanIdentity(a: true)
+  booleanParse(string: "false")
+  booleanToString(a: true)
+  booleanCoerceFromOpt
+  booleanNot(a: false)
+  booleanOr(a: false, b: false)
+  booleanXor(a: true, b: true)
+  booleanAnd(a: true, b: true)
+  booleanListUnion(a: [true, false], b: [true, false])
+  booleanListConcat(a: [true, false], b: [true, false])
+  booleanListReverse(a: [true, false, true, false])
+}
+# Write your query or mutation here
+query DateTests {
+  dateIdentity(a: "12/2/2007")
+  dateParse(string: "2007-12-03")
+  dateNow
+  dateToString(a: "2007-12-03")
+  dateCoerceFromOpt
+  dateListUnion(
+    a: ["2007-12-03", "2007-12-04"]
+    b: ["2007-12-03", "2007-12-05"]
+  )
+}
+
+query FloatTests {
+  floatParse(string: "3.14")
+  floatToString(a: 3.14)
+  floatListUnion(a: [1.0, 2.0, 3.0], b: [3.0, 4.0])
+}
+
+query JsonTests {
+  jsonParse(string: "{\"a\":[1,2,3]}")
+  jsonToString(a: { a: [1, 2, 3] })
+  jsonListUnion(a: [{ a: 1 }, { a: 2 }, { a: 3 }], b: [{ a: 3 }, { a: 4 }])
+}
+
+query IntTests {
+  intParse(string: "3.14")
+  intToString(a: 3)
+  intListUnion(a: [1, 2, 3], b: [3, 4])
+}

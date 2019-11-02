@@ -10,44 +10,6 @@ type Info {
 }
 
 type Query {
-  dateIdentity(a: Date!): Date!
-  dateTimeIdentity(a: DateTime!): DateTime!
-  floatIdentity(a: Float!): Float!
-  idIdentity(a: ID!): ID!
-  intIdentity(a: Int!): Int!
-  jsonIdentity(a: JSON!): JSON!
-  timeIdentity(a: Time!): Time!
-  stringIdentity(a: String!): String!
-
-  dateIdentityOpt(a: Date): Date
-  dateTimeIdentityOpt(a: DateTime): DateTime
-  floatIdentityOpt(a: Float): Float
-  idIdentityOpt(a: ID): ID
-  intIdentityOpt(a: Int): Int
-  jsonIdentityOpt(a: JSON): JSON
-  stringIdentityOpt(a: String): String
-  timeIdentityOpt(a: Time): Time
-
-  dateCoerceFromOpt(a: Date): Date!
-  dateTimeCoerceFromOpt(a: DateTime): DateTime!
-  floatCoerceFromOpt(a: Float): Float!
-  idCoerceFromOpt(a: ID): ID!
-  intCoerceFromOpt(a: Int): Int!
-  jsonCoerceFromOpt(a: JSON): JSON!
-  stringCoerceFromOpt(a: String): String!
-  timeCoerceFromOpt(a: Time): Time!
-
-  dateCoerceToOpt(a: Date!): Date
-  dateTimeCoerceToOpt(a: DateTime!): DateTime
-  floatCoerceToOpt(a: Float!): Float
-  idCoerceToOpt(a: ID!): ID
-  intCoerceToOpt(a: Int!): Int
-  jsonCoerceToOpt(a: JSON!): JSON
-  stringCoerceToOpt(a: String!): String
-  timeCoerceToOpt(a: Time!): Time
-
-  unionString(a: [String!]!, b: [String!]!): [String!]!
-
   """
   Mandatory service manifest.
   """
