@@ -16,13 +16,22 @@ query BooleanTests {
 query DateTests {
   dateIdentity(x: "12/2/2007")
   dateParse(x: "2007-12-03")
-  dateNow
   dateToString(x: "2007-12-03")
   dateCoerceFromOpt
   dateListUnion(
     a: ["2007-12-03", "2007-12-04"]
     b: ["2007-12-03", "2007-12-05"]
   )
+}
+
+mutation DateTestsM {
+  dateNow
+}
+mutation DateTimeTestsM {
+  dateTimeNow
+}
+mutation TimeTestsM {
+  timeNow
 }
 
 query FloatTests {

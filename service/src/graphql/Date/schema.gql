@@ -19,5 +19,9 @@ type Query {
   dateListFilterNulls(x: [Date]): [Date!]!
 
   # Operations
+}
+
+type Mutation {
+  # Operations
   dateNow: Date!
 }

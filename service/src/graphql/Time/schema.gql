@@ -19,5 +19,8 @@ type Query {
   timeListFilterNulls(x: [Time]): [Time!]!
 
   # Operations
+}
+
+type Mutation {
   timeNow: Time!
 }

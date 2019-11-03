@@ -18,9 +18,11 @@ export const resolver = {
     timeListReverse: async (_, { x }) => x.reverse(),
     timeListUnique: async (_, { x }) => [...new Set(x)],
     timeListFilterNulls: async (_, { x }) =>
-      x ? x.filter(y => y !== null) : [],
+      x ? x.filter(y => y !== null) : []
 
     // Operations
+  },
+  Mutation: {
     timeNow: async () => new Date().toLocaleTimeString()
   }
 }

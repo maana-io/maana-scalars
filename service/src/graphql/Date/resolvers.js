@@ -18,9 +18,11 @@ export const resolver = {
     dateListReverse: async (_, { x }) => x.reverse(),
     dateListUnique: async (_, { x }) => [...new Set(x)],
     dateListFilterNulls: async (_, { x }) =>
-      x ? x.filter(y => y !== null) : [],
+      x ? x.filter(y => y !== null) : []
 
     // Operations
+  },
+  Mutation: {
     dateNow: async () => new Date().toLocaleDateString()
   }
 }
