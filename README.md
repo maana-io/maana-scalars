@@ -3,9 +3,8 @@ Maana Q service for scalar identities, coercions, serialization / deserializatio
 
 ## Deployment
 
-1. Make sure you have [Q CLI](https://www.npmjs.com/package/graphql-cli-maana/v/3.2.1-beta.37) installed by running 
-  `npm install -g graphql-cli-maana`
-  
+1. Make sure you have [GraphQL CLI](https://www.npmjs.com/package/graphql-cli) and [Q CLI](https://www.npmjs.com/package/graphql-cli-maana) installed by running 
+  `npm install -g graphql-cli graphql-cli-maana`
 2. Login to your docker registry of choice using `docker login` or `az acr login`
 3. From the root of `maana-q-scalars`, run 
 `gql mdeploy`
