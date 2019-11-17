@@ -1,0 +1,46 @@
+type DateSpan {
+  id: ID!
+  start: Date
+  end: Date
+}
+
+input DateSpanInput {
+  id: ID
+  start: Date
+  end: Date
+}
+
+type Query {
+  # Identity
+  dateSpanIdentity(x: DateSpanInput!): DateSpan!
+  dateSpanIdentityOpt(x: DateSpanInput): DateSpan
+
+  # NONULL coercion
+  dateSpanCoerceFromOpt(x: DateSpanInput): DateSpan!
+  dateSpanCoerceToOpt(x: DateSpanInput!): DateSpan
+
+  # String de/serialization
+  dateSpanParse(x: String!): DateSpan!
+  dateSpanToString(x: DateSpanInput!): String!
+
+  # Lists
+  dateSpanListUnion(a: [DateSpanInput!]!, b: [DateSpanInput!]!): [DateSpan!]!
+  dateSpanListConcat(a: [DateSpanInput!]!, b: [DateSpanInput!]!): [DateSpan!]!
+  dateSpanListReverse(x: [DateSpanInput!]!): [DateSpan!]!
+  dateSpanListUnique(x: [DateSpanInput!]!): [DateSpan!]!
+  dateSpanListFilterNulls(x: [DateSpanInput]): [DateSpan!]!
+
+  # Operations
+
+  # Projectors
+  dateSpanStart(x: DateSpanInput!): Date
+  dateSpanEnd(x: DateSpanInput!): Date
+}
+
+type Mutation {
+  # Operations
+
+  # Constructors
+  dateSpanConstruct(start: Date, end: Date): DateSpan!
+  dateSpanConstructFromId(id: ID!): DateSpan!
+}

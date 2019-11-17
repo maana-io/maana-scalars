@@ -28,6 +28,8 @@ import {
   counter,
   BuildGraphqlClient
 } from 'io.maana.shared'
+import { version } from '../package'
+
 require('dotenv').config()
 
 const options = {
@@ -135,7 +137,9 @@ const initServer = options => {
 
   httpServer.listen({ port: PORT }, () => {
     log(SELF).info(
-      `listening on ${print.external(`http://${HOSTNAME}:${PORT}/graphql`)}`
+      `${print.internal(`v${version}`)} listening on ${print.external(
+        `http://${HOSTNAME}:${PORT}/graphql`
+      )}`
     )
 
     let auth0 = new AuthenticationClient({

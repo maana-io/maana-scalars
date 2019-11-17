@@ -62,3 +62,11 @@ query StringTests {
   stringReverse(x: "mary")
   stringReplace(source: "Every where Mary went", search: "Mary", replace: "Bob")
 }
+
+query DateSpanTests {
+  dateSpanCoerceFromOpt {
+    id
+    start
+    end
+  }
+}
