@@ -23,6 +23,19 @@ export const resolver = {
     // Operations
     floatEqual: async (_, { a, b }) => a === b,
     floatGreaterThan: async (_, { x, min }) => x > min,
-    floatLessThan: async (_, { x, max }) => x < max
+    floatLessThan: async (_, { x, max }) => x < max,
+
+    // Constants
+    floatZero: async () => 0.0,
+    floatOne: async () => 1.0,
+    floatTwo: async () => 2.0,
+    floatThree: async () => 3.0,
+    floatFour: async () => 4.0,
+    floatFive: async () => 5.0,
+    floatSix: async () => 6.0,
+    floatSeven: async () => 7.0,
+    floatEight: async () => 8.0,
+    floatNine: async () => 9.0,
+    floatTen: async () => 10.0
   }
 }

@@ -29,6 +29,10 @@ export const resolver = {
     booleanOr: async (_, { a, b }) => a || b,
     booleanAnd: async (_, { a, b }) => a && b,
     booleanXor: async (_, { a, b }) => (a ? !b : b),
-    booleanNot: async (_, { x }) => !x
+    booleanNot: async (_, { x }) => !x,
+
+    // Constants
+    true: async () => true,
+    false: async () => false
   }
 }

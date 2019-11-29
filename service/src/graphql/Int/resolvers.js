@@ -17,8 +17,22 @@ export const resolver = {
     intListConcat: async (_, { a, b }) => [...a, ...b],
     intListReverse: async (_, { x }) => x.reverse(),
     intListUnique: async (_, { x }) => [...new Set(x)],
-    intListFilterNulls: async (_, { x }) => (x ? x.filter(y => y !== null) : [])
+    intListFilterNulls: async (_, { x }) =>
+      x ? x.filter(y => y !== null) : [],
 
     // Operations
+
+    // Constants
+    intZero: async () => 0,
+    intOne: async () => 1,
+    intTwo: async () => 2,
+    intThree: async () => 3,
+    intFour: async () => 4,
+    intFive: async () => 5,
+    intSix: async () => 6,
+    intSeven: async () => 7,
+    intEight: async () => 8,
+    intNine: async () => 9,
+    intTen: async () => 10
   }
 }
