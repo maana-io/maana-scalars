@@ -20,6 +20,8 @@ export const resolver = {
     stringListUnique: async (_, { x }) => [...new Set(x)],
     stringListFilterNulls: async (_, { x }) =>
       x ? x.filter(y => y !== null) : [],
+    stringListHead: async (_, { x }) => x[0],
+    stringListWrap: async (_, { x }) => [x],
 
     // Operations
     stringLength: async (_, { x }) => x.length,
