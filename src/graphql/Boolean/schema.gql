@@ -23,4 +23,8 @@ type Query {
   booleanAnd(a: Boolean!, b: Boolean!): Boolean!
   booleanXor(a: Boolean!, b: Boolean!): Boolean!
   booleanNot(x: Boolean!): Boolean!
+
+  # Constants
+  booleanTrue: Boolean!
+  booleanFalse: Boolean!
 }

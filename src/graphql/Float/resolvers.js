@@ -8,6 +8,9 @@ export const resolver = {
     floatCoerceFromOpt: async (_, { x }) => x || {},
     floatCoerceToOpt: async (_, { x }) => x,
 
+    // Int coercion
+    floatFromInt: async (_, { x }) => x,
+
     // String de/serialization
     floatParse: async (_, { x }) => parseFloat(x),
     floatToString: async (_, { x }) => x.toString(),

@@ -32,7 +32,7 @@ export const resolver = {
     booleanNot: async (_, { x }) => !x,
 
     // Constants
-    true: async () => true,
-    false: async () => false
+    booleanTrue: async () => true,
+    booleanFalse: async () => false
   }
 }

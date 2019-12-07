@@ -7,6 +7,9 @@ type Query {
   floatCoerceFromOpt(x: Float): Float!
   floatCoerceToOpt(x: Float!): Float
 
+  # INT coercion
+  floatFromInt(x: Int!): Float!
+
   # String de/serialization
   floatParse(x: String!): Float!
   floatToString(x: Float!): String!
@@ -22,4 +25,17 @@ type Query {
   floatEqual(a: Float!, b: Float!): Boolean!
   floatGreaterThan(x: Float!, min: Float!): Boolean!
   floatLessThan(x: Float!, max: Float!): Boolean!
+
+  # Constants
+  floatZero: Float
+  floatOne: Float
+  floatTwo: Float
+  floatThree: Float
+  floatFour: Float
+  floatFive: Float
+  floatSix: Float
+  floatSeven: Float
+  floatEight: Float
+  floatNine: Float
+  floatTen: Float
 }

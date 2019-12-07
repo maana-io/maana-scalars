@@ -7,6 +7,9 @@ type Query {
   intCoerceFromOpt(x: Int): Int!
   intCoerceToOpt(x: Int!): Int
 
+  # Float coercion
+  intFromFloat(x: Float!): Int!
+
   # String de/serialization
   intParse(x: String!): Int!
   intToString(x: Int!): String!
@@ -22,4 +25,17 @@ type Query {
   intEqual(a: Int!, b: Int!): Boolean!
   intGreaterThan(x: Int!, min: Int!): Boolean!
   intLessThan(x: Int!, max: Int!): Boolean!
+
+  # Constants
+  intZero: Int
+  intOne: Int
+  intTwo: Int
+  intThree: Int
+  intFour: Int
+  intFive: Int
+  intSix: Int
+  intSeven: Int
+  intEight: Int
+  intNine: Int
+  intTen: Int
 }

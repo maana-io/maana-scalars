@@ -5,7 +5,7 @@ export const resolver = {
     idIdentityOpt: async (_, { x }) => x,
 
     // NONULL coercion
-    idCoerceFromOpt: async (_, { x }) => x || {},
+    idCoerceFromOpt: async (_, { x }) => x || '',
     idCoerceToOpt: async (_, { x }) => x,
 
     // String de/serialization
