@@ -22,6 +22,7 @@ export const resolver = {
     floatListUnique: async (_, { x }) => [...new Set(x)],
     floatListFilterNulls: async (_, { x }) =>
       x ? x.filter(y => y !== null) : [],
+    floatListsAdd: async ( _, { x, y }) => x.slice(0,y.length).map( (a,i) => a+y[i]),  
 
     // Operations
     floatEqual: async (_, { a, b }) => a === b,

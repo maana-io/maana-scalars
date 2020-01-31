@@ -20,6 +20,7 @@ type Query {
   intListReverse(x: [Int!]!): [Int!]!
   intListUnique(x: [Int!]!): [Int!]!
   intListFilterNulls(x: [Int]): [Int!]!
+  intListsAdd( x:[Int!]!, y: [Int!]):[Int!]!
 
   # Operations
   intEqual(a: Int!, b: Int!): Boolean!

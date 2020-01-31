@@ -20,6 +20,7 @@ type Query {
   floatListReverse(x: [Float!]!): [Float!]!
   floatListUnique(x: [Float!]!): [Float!]!
   floatListFilterNulls(x: [Float]): [Float!]!
+  floatListsAdd( x:[Float!]!, y:[Float!]!):[Float!]!
 
   # Operations
   floatEqual(a: Float!, b: Float!): Boolean!
