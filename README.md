@@ -1,4 +1,4 @@
-# Maana Q Scalars (maana-q-scalars)
+# Maana Scalars (maana-scalars)
 
 Maana Q service for scalar identities, coercions, serialization / deserialization, list operation, and scalar-specific operations.
 
