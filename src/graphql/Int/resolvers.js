@@ -22,6 +22,7 @@ export const resolver = {
     intListUnique: async (_, { x }) => [...new Set(x)],
     intListFilterNulls: async (_, { x }) =>
       x ? x.filter(y => y !== null) : [],
+    intListsAdd: async ( _, { x, y }) => x.slice(0,y.length).map( (a,i) => a+y[i]),  
 
     // Operations
 
