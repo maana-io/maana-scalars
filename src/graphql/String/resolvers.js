@@ -29,6 +29,10 @@ export const resolver = {
     stringConcat: async (_, { a, b }) => a + b,
     stringEqual: async (_, { a, b }) => a === b,
     stringReplace: async (_, { source, search, replace }) =>
-      source.replace(search, replace)
+      source.replace(search, replace),
+
+    // Default value resolution
+    stringValueOrDefault: async (_, { value, defaultValue }) =>
+      value || defaultValue
   }
 }

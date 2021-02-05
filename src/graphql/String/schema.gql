@@ -22,4 +22,7 @@ type Query {
   stringConcat(a: String!, b: String!): String!
   stringEqual(a: String!, b: String!): String!
   stringReplace(source: String!, search: String!, replace: String!): String!
+
+  # Default value resolution
+  stringValueOrDefault(value: String, defaultValue: String!): String!
 }

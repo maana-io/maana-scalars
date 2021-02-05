@@ -25,11 +25,14 @@ export const resolver = {
     dateSpanListFilterNulls: async (_, { x }) =>
       x ? x.filter(y => y !== null) : [],
 
-    // Operations
-
     // Projectors
-    dateSpanStart: async (_, { x }) => x.start,
-    dateSpanEnd: async (_, { x }) => x.end
+    dateSpanProjectId: async (_, { x }) => x.id,
+    dateSpanProjectStart: async (_, { x }) => x.start,
+    dateSpanProjectEnd: async (_, { x }) => x.end,
+
+    // Default value resolution
+    dateSpanValueOrDefault: async (_, { value, defaultValue }) =>
+      value || defaultValue
   },
   Mutation: {
     // Operations

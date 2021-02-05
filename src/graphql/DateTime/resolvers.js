@@ -18,9 +18,11 @@ export const resolver = {
     dateTimeListReverse: async (_, { x }) => x.reverse(),
     dateTimeListUnique: async (_, { x }) => [...new Set(x)],
     dateTimeListFilterNulls: async (_, { x }) =>
-      x ? x.filter(y => y !== null) : []
+      x ? x.filter(y => y !== null) : [],
 
-    // Operations
+    // Default value resolution
+    dateTimeValueOrDefault: async (_, { value, defaultValue }) =>
+      value || defaultValue
   },
   Mutation: {
     dateTimeNow: async () => new Date().toISOString()

@@ -20,23 +20,40 @@ type Query {
   floatListReverse(x: [Float!]!): [Float!]!
   floatListUnique(x: [Float!]!): [Float!]!
   floatListFilterNulls(x: [Float]): [Float!]!
-  floatListsAdd( x:[Float!]!, y:[Float!]!):[Float!]!
+  floatListsAdd(x: [Float!]!, y: [Float!]!): [Float!]!
 
   # Operations
-  floatEqual(a: Float!, b: Float!): Boolean!
-  floatGreaterThan(x: Float!, min: Float!): Boolean!
-  floatLessThan(x: Float!, max: Float!): Boolean!
+  floatIsEqual(a: Float!, b: Float!): Boolean!
+  floatIsGreaterThan(x: Float!, min: Float!): Boolean!
+  floatIsGreaterThanOrEqualTo(x: Float!, min: Float!): Boolean!
+  floatIsLessThan(x: Float!, max: Float!): Boolean!
+  floatIsLessThanOrEqualTo(x: Float!, max: Float!): Boolean!
+  floatIsBetweenInclusive(x: Float!, min: Float!, max: Float!): Boolean!
+  floatIsBetweenExclusive(x: Float!, min: Float!, max: Float!): Boolean!
 
   # Constants
-  floatZero: Float
-  floatOne: Float
-  floatTwo: Float
-  floatThree: Float
-  floatFour: Float
-  floatFive: Float
-  floatSix: Float
-  floatSeven: Float
-  floatEight: Float
-  floatNine: Float
-  floatTen: Float
+  floatZero: Float!
+  floatOne: Float!
+  floatOneHalf: Float!
+  floatOneQuarter: Float!
+  floatOneEigth: Float!
+  floatOneSixteenth: Float!
+  floatOneThirtySecond: Float!
+  floatOneSixtyFourth: Float!
+  floatTwo: Float!
+  floatThree: Float!
+  floatFour: Float!
+  floatFive: Float!
+  floatSix: Float!
+  floatSeven: Float!
+  floatEight: Float!
+  floatNine: Float!
+  floatTen: Float!
+
+  # Mathematical constants
+  floatPi: Float!
+  floatE: Float!
+
+  # Default value resolution
+  floatValueOrDefault(value: Float, defaultValue: Float!): Float!
 }

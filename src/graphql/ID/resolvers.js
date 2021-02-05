@@ -17,8 +17,10 @@ export const resolver = {
     idListConcat: async (_, { a, b }) => [...a, ...b],
     idListReverse: async (_, { x }) => x.reverse(),
     idListUnique: async (_, { x }) => [...new Set(x)],
-    idListFilterNulls: async (_, { x }) => (x ? x.filter(y => y !== null) : [])
+    idListFilterNulls: async (_, { x }) => (x ? x.filter(y => y !== null) : []),
 
-    // Operations
+    // Default value resolution
+    idValueOrDefault: async (_, { value, defaultValue }) =>
+      value || defaultValue
   }
 }

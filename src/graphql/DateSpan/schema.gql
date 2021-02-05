@@ -5,7 +5,7 @@ type DateSpan {
 }
 
 input DateSpanInput {
-  id: ID
+  id: ID!
   start: Date
   end: Date
 }
@@ -30,16 +30,19 @@ type Query {
   dateSpanListUnique(x: [DateSpanInput!]!): [DateSpan!]!
   dateSpanListFilterNulls(x: [DateSpanInput]): [DateSpan!]!
 
-  # Operations
-
   # Projectors
-  dateSpanStart(x: DateSpanInput!): Date
-  dateSpanEnd(x: DateSpanInput!): Date
+  dateSpanProjectId(x: DateSpanInput!): ID!
+  dateSpanProjectStart(x: DateSpanInput!): Date
+  dateSpanProjectEnd(x: DateSpanInput!): Date
+
+  # Default value resolution
+  dateSpanValueOrDefault(
+    value: DateSpanInput
+    defaultValue: DateSpanInput!
+  ): DateSpan!
 }
 
 type Mutation {
-  # Operations
-
   # Constructors
   dateSpanConstruct(start: Date, end: Date): DateSpan!
   dateSpanConstructFromId(id: ID!): DateSpan!

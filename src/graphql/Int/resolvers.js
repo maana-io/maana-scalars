@@ -22,9 +22,17 @@ export const resolver = {
     intListUnique: async (_, { x }) => [...new Set(x)],
     intListFilterNulls: async (_, { x }) =>
       x ? x.filter(y => y !== null) : [],
-    intListsAdd: async ( _, { x, y }) => x.slice(0,y.length).map( (a,i) => a+y[i]),  
+    intListsAdd: async (_, { x, y }) =>
+      x.slice(0, y.length).map((a, i) => a + y[i]),
 
     // Operations
+    intIsEqual: async (_, { a, b }) => a === b,
+    intIsGreaterThan: async (_, { x, min }) => x > min,
+    intIsGreaterThanOrEqualTo: async (_, { x, min }) => x >= min,
+    intIsLessThan: async (_, { x, max }) => x < max,
+    intIsLessThanOrEqualTo: async (_, { x, max }) => x <= max,
+    intIsBetweenInclusive: async (_, { x, min, max }) => x >= min && x <= max,
+    intIsBetweenExclusive: async (_, { x, min, max }) => x > min && x < max,
 
     // Constants
     intZero: async () => 0,
@@ -37,6 +45,10 @@ export const resolver = {
     intSeven: async () => 7,
     intEight: async () => 8,
     intNine: async () => 9,
-    intTen: async () => 10
+    intTen: async () => 10,
+
+    // Default value resolution
+    intValueOrDefault: async (_, { value, defaultValue }) =>
+      value || defaultValue
   }
 }

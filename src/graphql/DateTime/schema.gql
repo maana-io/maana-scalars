@@ -18,7 +18,8 @@ type Query {
   dateTimeListUnique(x: [DateTime!]!): [DateTime!]!
   dateTimeListFilterNulls(x: [DateTime]): [DateTime!]!
 
-  # Operations
+  # Default value resolution
+  dateTimeValueOrDefault(value: DateTime, defaultValue: DateTime!): DateTime!
 }
 
 type Mutation {

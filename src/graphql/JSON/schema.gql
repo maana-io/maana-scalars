@@ -18,5 +18,6 @@ type Query {
   jsonListUnique(x: [JSON!]!): [JSON!]!
   jsonListFilterNulls(x: [JSON]): [JSON!]!
 
-  # Operations
+  # Default value resolution
+  jsonValueOrDefault(value: JSON, defaultValue: JSON!): JSON!
 }

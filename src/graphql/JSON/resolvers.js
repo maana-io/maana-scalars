@@ -18,8 +18,10 @@ export const resolver = {
     jsonListReverse: async (_, { x }) => x.reverse(),
     jsonListUnique: async (_, { x }) => [...new Set(x)],
     jsonListFilterNulls: async (_, { x }) =>
-      x ? x.filter(y => y !== null) : []
+      x ? x.filter(y => y !== null) : [],
 
-    // Operations
+    // Default value resolution
+    jsonValueOrDefault: async (_, { value, defaultValue }) =>
+      value || defaultValue
   }
 }

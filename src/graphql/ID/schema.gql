@@ -18,5 +18,6 @@ type Query {
   idListUnique(x: [ID!]!): [ID!]!
   idListFilterNulls(x: [ID]): [ID!]!
 
-  # Operations
+  # Default value resolution
+  idValueOrDefault(value: ID, defaultValue: ID!): ID!
 }

@@ -18,7 +18,8 @@ type Query {
   timeListUnique(x: [Time!]!): [Time!]!
   timeListFilterNulls(x: [Time]): [Time!]!
 
-  # Operations
+  # Default value resolution
+  timeValueOrDefault(value: Time, defaultValue: Time!): Time!
 }
 
 type Mutation {

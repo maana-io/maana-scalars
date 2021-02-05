@@ -33,6 +33,10 @@ export const resolver = {
 
     // Constants
     booleanTrue: async () => true,
-    booleanFalse: async () => false
+    booleanFalse: async () => false,
+
+    // Default value resolution
+    booleanValueOrDefault: async (_, { value, defaultValue }) =>
+      value || defaultValue
   }
 }

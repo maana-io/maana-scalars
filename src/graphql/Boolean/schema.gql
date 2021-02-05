@@ -27,4 +27,7 @@ type Query {
   # Constants
   booleanTrue: Boolean!
   booleanFalse: Boolean!
+
+  # Default value resolution
+  booleanValueOrDefault(value: Boolean, defaultValue: Boolean!): Boolean!
 }

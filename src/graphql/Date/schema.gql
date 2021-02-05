@@ -18,7 +18,8 @@ type Query {
   dateListUnique(x: [Date!]!): [Date!]!
   dateListFilterNulls(x: [Date]): [Date!]!
 
-  # Operations
+  # Default value resolution
+  dateValueOrDefault(value: Date, defaultValue: Date!): Date!
 }
 
 type Mutation {

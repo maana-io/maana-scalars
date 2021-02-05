@@ -20,23 +20,30 @@ type Query {
   intListReverse(x: [Int!]!): [Int!]!
   intListUnique(x: [Int!]!): [Int!]!
   intListFilterNulls(x: [Int]): [Int!]!
-  intListsAdd( x:[Int!]!, y: [Int!]):[Int!]!
+  intListsAdd(x: [Int!]!, y: [Int!]): [Int!]!
 
   # Operations
-  intEqual(a: Int!, b: Int!): Boolean!
-  intGreaterThan(x: Int!, min: Int!): Boolean!
-  intLessThan(x: Int!, max: Int!): Boolean!
+  intIsEqual(a: Int!, b: Int!): Boolean!
+  intIsGreaterThan(x: Int!, min: Int!): Boolean!
+  intIsGreaterThanOrEqualTo(x: Int!, min: Int!): Boolean!
+  intIsLessThan(x: Int!, max: Int!): Boolean!
+  intIsLessThanOrEqualTo(x: Int!, max: Int!): Boolean!
+  intIsBetweenInclusive(x: Int!, min: Int!, max: Int!): Boolean!
+  intIsBetweenExclusive(x: Int!, min: Int!, max: Int!): Boolean!
 
   # Constants
-  intZero: Int
-  intOne: Int
-  intTwo: Int
-  intThree: Int
-  intFour: Int
-  intFive: Int
-  intSix: Int
-  intSeven: Int
-  intEight: Int
-  intNine: Int
-  intTen: Int
+  intZero: Int!
+  intOne: Int!
+  intTwo: Int!
+  intThree: Int!
+  intFour: Int!
+  intFive: Int!
+  intSix: Int!
+  intSeven: Int!
+  intEight: Int!
+  intNine: Int!
+  intTen: Int!
+
+  # Default value resolution
+  intValueOrDefault(value: Int, defaultValue: Int!): Int!
 }
